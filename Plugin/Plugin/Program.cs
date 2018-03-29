@@ -13,8 +13,9 @@ namespace Plugin
             PlugInManager p = new PlugInManager();
             foreach(IPlugin plugin in p.Plugins)
             {
-                plugin.DoSomething();
+                Console.WriteLine(plugin.DoSomething());
             }
+            Console.ReadKey();
         }
     }
 }

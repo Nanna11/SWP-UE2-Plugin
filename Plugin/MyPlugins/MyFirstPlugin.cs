@@ -8,5 +8,9 @@ namespace Plugin
 {
     public class MyFirstPlugin : IPlugin
     {
+        public string DoSomething()
+        {
+           return "This is my first Plugin";
+        }
     }
 }

@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Plugin
 {
-    public interface IPlugin
+    public class MySecondPlugin : IPlugin
     {
-        string DoSomething();
+        public string DoSomething()
+        {
+            return "This is my second Plugin";
+        }
     }
 }

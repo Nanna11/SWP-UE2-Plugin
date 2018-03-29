@@ -40,12 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MySecondPlugin.cs" />
     <Compile Include="MyFirstPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\Api.csproj">
-      <Project>{164d2f4e-c363-4cbe-8728-ed1a9a67b5fb}</Project>
+    <ProjectReference Include="..\Api\Api.csproj">
+      <Project>{086df5fb-8404-4be3-bce0-5ec78770672d}</Project>
       <Name>Api</Name>
     </ProjectReference>
   </ItemGroup>
