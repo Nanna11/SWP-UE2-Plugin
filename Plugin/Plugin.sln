@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin", "Plugin\Plugin.csproj", "{43FA8088-6477-4555-AB97-6DCD196FB370}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "ClassLibrary1\Api.csproj", "{164D2F4E-C363-4CBE-8728-ED1A9A67B5FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPlugins", "MyPlugins\MyPlugins.csproj", "{C68FA8F3-EA63-4C27-B7E1-72401AFEB465}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{43FA8088-6477-4555-AB97-6DCD196FB370}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43FA8088-6477-4555-AB97-6DCD196FB370}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43FA8088-6477-4555-AB97-6DCD196FB370}.Release|Any CPU.Build.0 = Release|Any CPU
+		{164D2F4E-C363-4CBE-8728-ED1A9A67B5FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{164D2F4E-C363-4CBE-8728-ED1A9A67B5FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{164D2F4E-C363-4CBE-8728-ED1A9A67B5FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{164D2F4E-C363-4CBE-8728-ED1A9A67B5FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C68FA8F3-EA63-4C27-B7E1-72401AFEB465}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C68FA8F3-EA63-4C27-B7E1-72401AFEB465}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C68FA8F3-EA63-4C27-B7E1-72401AFEB465}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C68FA8F3-EA63-4C27-B7E1-72401AFEB465}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

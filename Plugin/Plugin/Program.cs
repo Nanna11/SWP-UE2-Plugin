@@ -10,6 +10,11 @@ namespace Plugin
     {
         static void Main(string[] args)
         {
+            PlugInManager p = new PlugInManager();
+            foreach(IPlugin plugin in p.Plugins)
+            {
+                plugin.DoSomething();
+            }
         }
     }
 }
