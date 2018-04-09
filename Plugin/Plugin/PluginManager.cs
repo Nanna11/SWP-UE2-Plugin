@@ -16,8 +16,9 @@ namespace Plugin
         static LinkedList<string> types = null;
         static ReaderWriterLock rwl = new ReaderWriterLock();
         LinkedList<string> contains = new LinkedList<string>();
+        static Dictionary<string, string> mockDirectory = new Dictionary<string, string>();
 
-        public PlugInManager()
+        public PlugInManager(List<Costumer> list)
         {
             if (types == null)
             {
@@ -26,6 +27,47 @@ namespace Plugin
             foreach (string s in types)
             {
                 Add(s);
+                PrepareData(s);
+                SetCustomers(list);
+            }
+        }
+
+        public void SetCustomers(List<Costumer> list)
+        {
+            foreach(IPlugin p in _Plugins)
+            {
+                p.Costumers = list;
+            }
+        }
+
+        public void Save()
+        {
+            foreach (IPlugin p in _Plugins)
+            {
+                try
+                {
+                    mockDirectory[p.GetType().ToString()] = p.WritePluginConfig();
+                }
+                catch (KeyNotFoundException)
+                {
+                    mockDirectory.Add(p.GetType().ToString(), p.WritePluginConfig());
+                }
+            }
+        }
+
+        public void PrepareData(string s)
+        {
+            foreach (IPlugin p in _Plugins)
+            {
+                string type = s.Substring(0, s.IndexOf(","));
+                try
+                {
+                    p.ReadPluginConfig(mockDirectory[type]);
+                }
+                catch (KeyNotFoundException)
+                {
+
+                }
             }
         }
 
@@ -49,6 +91,7 @@ namespace Plugin
             {
                 object obj = Activator.CreateInstance(type);
                 IPlugin nplugin = (IPlugin)obj;
+                
                 this.Add(nplugin);
             }
             catch (NullReferenceException)
@@ -74,7 +117,6 @@ namespace Plugin
                 if (Status == "active") types.AddFirst(PluginName);
             }
             sr.Close();
-
         }
 
     }

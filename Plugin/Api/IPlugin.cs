@@ -8,6 +8,9 @@ namespace Plugin
 {
     public interface IPlugin
     {
+        List<Costumer> Costumers {set;}
         string DoSomething();
+        string WritePluginConfig();
+        void ReadPluginConfig(string xml);
     }
 }

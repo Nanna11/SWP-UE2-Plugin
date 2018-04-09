@@ -10,11 +10,21 @@ namespace Plugin
     {
         static void Main(string[] args)
         {
-            PlugInManager p = new PlugInManager();
+            List<Costumer> customers = new List<Costumer>();
+            customers.Add(new Costumer(1, "name"));
+
+            PlugInManager p = new PlugInManager(customers);
             foreach(IPlugin plugin in p.Plugins)
             {
                 Console.WriteLine(plugin.DoSomething());
             }
+            p.Save();
+            p = new PlugInManager(customers);
+            foreach (IPlugin plugin in p.Plugins)
+            {
+                Console.WriteLine(plugin.DoSomething());
+            }
+
             Console.ReadKey();
         }
     }
